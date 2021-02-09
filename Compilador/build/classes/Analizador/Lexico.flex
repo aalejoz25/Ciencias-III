@@ -10,7 +10,7 @@ espacio=[ ,\t,\r]+
     public String lexemas;
 %}
 %%
-(int) {lexemas=yytext(); return Int;}
+
 /* Espacios en blanco */
 {espacio} {/*Ignore*/}
 
@@ -28,6 +28,12 @@ espacio=[ ,\t,\r]+
 
 /* Tipos de datos */
 ( byte | int | char | long | float | double ) {lexemas=yytext(); return T_dato;}
+
+/* Tipo de dato Int */
+( int ) {lexemas=yytext(); return Int;}
+
+/* Tipo de dato Void */
+( void ) {lexemas=yytext(); return Void;}
 
 /* Tipo de dato String */
 ( string ) {lexemas=yytext(); return Cadena;}
@@ -109,6 +115,9 @@ espacio=[ ,\t,\r]+
 
 /* Punto */
 ( "." ) {lexemas=yytext(); return Punto;}
+
+/* Coma */
+( "," ) {lexemas=yytext(); return S_coma;}
 
 /* Identificador */
 {L}({L}|{D})* {lexemas=yytext(); return Identificador;}

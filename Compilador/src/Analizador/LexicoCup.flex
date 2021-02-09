@@ -32,7 +32,10 @@ espacio=[ ,\t,\r,\n]+
 ( "\"" ) {return new Symbol(sym.Comillas, yychar, yyline, yytext());}
 
 /* Tipos de datos */
-( byte | int | char | long | float | double ) {return new Symbol(sym.T_dato, yychar, yyline, yytext());}
+( byte | char | long | float | double ) {return new Symbol(sym.T_dato, yychar, yyline, yytext());}
+
+/* Void */
+( void ) {return new Symbol(sym.Void, yychar, yyline, yytext());}
 
 /* Tipo de dato String */
 ( String ) {return new Symbol(sym.Cadena, yychar, yyline, yytext());}
@@ -51,6 +54,9 @@ espacio=[ ,\t,\r,\n]+
 
 /* Palabra reservada For */
 ( for ) {return new Symbol(sym.For, yychar, yyline, yytext());}
+
+/* Palabra reservada Printf */
+( printf ) {return new Symbol(sym.Printf, yychar, yyline, yytext());}
 
 /* Operador Igual */
 ( "=" ) {return new Symbol(sym.Igual, yychar, yyline, yytext());}
@@ -108,6 +114,9 @@ espacio=[ ,\t,\r,\n]+
 
 /* Punto */
 ( "." ) {return new Symbol(sym.Punto, yychar, yyline, yytext());}
+
+/* Coma */
+( "," ) {return new Symbol(sym.S_coma, yychar, yyline, yytext());}
 
 /* Identificador */
 {L}({L}|{D})* {return new Symbol(sym.Identificador, yychar, yyline, yytext());}

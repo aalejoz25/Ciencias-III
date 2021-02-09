@@ -2,6 +2,7 @@ package Analizador;
 
 public enum Tokens {
     Int,
+    Void,
     Linea,
     Comillas,
     T_dato,
@@ -32,6 +33,7 @@ public enum Tokens {
     Main,
     Printf,
     P_coma,
+    S_coma,
     Punto,
     Identificador,
     Numero,

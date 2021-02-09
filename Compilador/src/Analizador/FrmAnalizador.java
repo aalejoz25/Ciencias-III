@@ -198,6 +198,10 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 case Int:
                     resultado += "  <Reservada int>\t" + lexicos.lexemas + "\n";
                     break;
+                    
+                 case Void:
+                    resultado += "  <Reservada void>\t" + lexicos.lexemas + "\n";
+                    break;
                 case Igual:
                     resultado += "  <Operador igual>\t" + lexicos.lexemas + "\n";
                     break;
@@ -269,6 +273,9 @@ public class FrmAnalizador extends javax.swing.JFrame {
                     break;                    
                 case P_coma:
                     resultado += "  <Punto y coma>\t" + lexicos.lexemas + "\n";
+                    break;
+                 case S_coma:
+                    resultado += "  <Coma>\t" + lexicos.lexemas + "\n";
                     break;
                 case Punto:
                     resultado += "  <Punto>\t\t" + lexicos.lexemas + "\n";
