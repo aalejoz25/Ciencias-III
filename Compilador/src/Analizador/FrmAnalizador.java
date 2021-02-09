@@ -89,19 +89,19 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnArchivo);
-        btnArchivo.setBounds(10, 112, 192, 37);
+        btnArchivo.setBounds(10, 112, 192, 45);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("David Ricardo Lopez Amador 20161020505");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(10, 66, 301, 17);
+        jLabel1.setBounds(10, 66, 306, 17);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Alvaro Alejandro Zarabanda 20161020507");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(10, 43, 296, 17);
+        jLabel2.setBounds(10, 43, 302, 17);
 
         Resultado.setColumns(20);
         Resultado.setRows(5);
@@ -120,7 +120,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnASintactico);
-        btnASintactico.setBounds(10, 350, 197, 37);
+        btnASintactico.setBounds(10, 350, 197, 45);
 
         btnALexico.setBackground(new java.awt.Color(0, 0, 0));
         btnALexico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -152,28 +152,28 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnBorrar);
-        btnBorrar.setBounds(640, 110, 106, 37);
+        btnBorrar.setBounds(640, 110, 106, 45);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Generar Objeto");
         jPanel2.add(jButton1);
-        jButton1.setBounds(10, 589, 197, 37);
+        jButton1.setBounds(10, 589, 193, 45);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Generar Ejecutable");
         jPanel2.add(jButton2);
-        jButton2.setBounds(277, 589, 235, 37);
+        jButton2.setBounds(277, 589, 233, 45);
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Ejecutar");
         jPanel2.add(jButton3);
-        jButton3.setBounds(602, 589, 119, 37);
+        jButton3.setBounds(602, 589, 117, 45);
 
         txtAnalizarSin.setColumns(20);
         txtAnalizarSin.setRows(5);
@@ -192,23 +192,23 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnBorrarSin);
-        btnBorrarSin.setBounds(270, 348, 99, 37);
+        btnBorrarSin.setBounds(270, 348, 96, 45);
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/name.png"))); // NOI18N
         jLabel3.setToolTipText("");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(634, 11, 76, 0);
+        jLabel3.setBounds(500, 50, 230, 100);
         jPanel2.add(jLabel4);
         jLabel4.setBounds(0, 0, 0, 0);
 
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\david\\OneDrive\\Desktop\\ciencias3\\Ciencias-III\\Compilador\\src\\imagenes\\logo.png")); // NOI18N
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(640, 0, 90, 106);
+        jLabel6.setBounds(640, 0, 90, 0);
 
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\david\\OneDrive\\Desktop\\ciencias3\\Ciencias-III\\Compilador\\src\\imagenes\\name.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo.png"))); // NOI18N
         jPanel2.add(jLabel7);
-        jLabel7.setBounds(490, 30, 166, 44);
+        jLabel7.setBounds(540, 0, 70, 90);
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 660));
         jPanel2.getAccessibleContext().setAccessibleName("prueba");
