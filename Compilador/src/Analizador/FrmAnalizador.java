@@ -42,123 +42,176 @@ public class FrmAnalizador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnALexico = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        btnArchivo = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Resultado = new javax.swing.JTextArea();
+        btnASintactico = new javax.swing.JButton();
+        btnALexico = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtAnalizarLex = new javax.swing.JTextArea();
-        btnArchivo = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
-        btnASintactico = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtAnalizarSin = new javax.swing.JTextArea();
         btnBorrarSin = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 0, 0));
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnALexico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnALexico.setText("Análisis Léxico");
-        btnALexico.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnALexicoActionPerformed(evt);
-            }
-        });
+        jLabel5.setBackground(new java.awt.Color(0, 0, 255));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(799, 32, -1, 193));
 
-        Resultado.setColumns(20);
-        Resultado.setRows(5);
-        jScrollPane1.setViewportView(Resultado);
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setName(""); // NOI18N
+        jPanel2.setLayout(null);
 
-        txtAnalizarLex.setColumns(20);
-        txtAnalizarLex.setRows(5);
-        jScrollPane2.setViewportView(txtAnalizarLex);
-
+        btnArchivo.setBackground(new java.awt.Color(0, 0, 0));
         btnArchivo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnArchivo.setForeground(new java.awt.Color(255, 255, 255));
         btnArchivo.setText("Abrir Fuente");
+        btnArchivo.setCursor(new java.awt.Cursor(java.awt.Cursor.CROSSHAIR_CURSOR));
         btnArchivo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnArchivoActionPerformed(evt);
             }
         });
+        jPanel2.add(btnArchivo);
+        btnArchivo.setBounds(10, 112, 192, 45);
 
-        btnBorrar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        btnBorrar.setText("Borrar");
-        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBorrarActionPerformed(evt);
-            }
-        });
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("David Ricardo Lopez Amador 20161020505");
+        jPanel2.add(jLabel1);
+        jLabel1.setBounds(10, 66, 306, 17);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Alvaro Alejandro Zarabanda 20161020507");
+        jPanel2.add(jLabel2);
+        jLabel2.setBounds(10, 43, 302, 17);
+
+        Resultado.setColumns(20);
+        Resultado.setRows(5);
+        jScrollPane1.setViewportView(Resultado);
+
+        jPanel2.add(jScrollPane1);
+        jScrollPane1.setBounds(10, 160, 359, 177);
+
+        btnASintactico.setBackground(new java.awt.Color(0, 0, 0));
         btnASintactico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnASintactico.setForeground(new java.awt.Color(255, 255, 255));
         btnASintactico.setText("Analisis Sintaxis");
         btnASintactico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnASintacticoActionPerformed(evt);
             }
         });
+        jPanel2.add(btnASintactico);
+        btnASintactico.setBounds(10, 350, 197, 45);
+
+        btnALexico.setBackground(new java.awt.Color(0, 0, 0));
+        btnALexico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnALexico.setForeground(new java.awt.Color(255, 255, 255));
+        btnALexico.setText("Análisis Léxico");
+        btnALexico.setBorder(null);
+        btnALexico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnALexicoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnALexico);
+        btnALexico.setBounds(390, 110, 197, 37);
+
+        txtAnalizarLex.setColumns(20);
+        txtAnalizarLex.setRows(5);
+        jScrollPane2.setViewportView(txtAnalizarLex);
+
+        jPanel2.add(jScrollPane2);
+        jScrollPane2.setBounds(390, 160, 359, 370);
+
+        btnBorrar.setBackground(new java.awt.Color(0, 0, 0));
+        btnBorrar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnBorrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnBorrar.setText("Borrar");
+        btnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBorrarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnBorrar);
+        btnBorrar.setBounds(640, 110, 106, 45);
+
+        jButton1.setBackground(new java.awt.Color(0, 0, 0));
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Generar Objeto");
+        jPanel2.add(jButton1);
+        jButton1.setBounds(10, 589, 193, 45);
+
+        jButton2.setBackground(new java.awt.Color(0, 0, 0));
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setText("Generar Ejecutable");
+        jPanel2.add(jButton2);
+        jButton2.setBounds(277, 589, 233, 45);
+
+        jButton3.setBackground(new java.awt.Color(0, 0, 0));
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setText("Ejecutar");
+        jPanel2.add(jButton3);
+        jButton3.setBounds(602, 589, 117, 45);
 
         txtAnalizarSin.setColumns(20);
         txtAnalizarSin.setRows(5);
         jScrollPane3.setViewportView(txtAnalizarSin);
 
+        jPanel2.add(jScrollPane3);
+        jScrollPane3.setBounds(10, 400, 360, 130);
+
+        btnBorrarSin.setBackground(new java.awt.Color(0, 0, 0));
         btnBorrarSin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnBorrarSin.setForeground(new java.awt.Color(255, 255, 255));
         btnBorrarSin.setText("Borrar");
         btnBorrarSin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBorrarSinActionPerformed(evt);
             }
         });
+        jPanel2.add(btnBorrarSin);
+        btnBorrarSin.setBounds(270, 348, 96, 45);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnArchivo, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnASintactico)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnBorrarSin)))
-                        .addGap(40, 40, 40)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnALexico)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(73, 73, 73))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnALexico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnBorrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btnArchivo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 291, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnASintactico)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnBorrarSin))
-                .addContainerGap(215, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/name.png"))); // NOI18N
+        jLabel3.setToolTipText("");
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(500, 50, 230, 100);
+        jPanel2.add(jLabel4);
+        jLabel4.setBounds(0, 0, 0, 0);
+
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(jLabel6);
+        jLabel6.setBounds(640, 0, 90, 0);
+
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo.png"))); // NOI18N
+        jPanel2.add(jLabel7);
+        jLabel7.setBounds(540, 0, 70, 90);
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 660));
+        jPanel2.getAccessibleContext().setAccessibleName("prueba");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -379,6 +432,17 @@ public class FrmAnalizador extends javax.swing.JFrame {
     private javax.swing.JButton btnArchivo;
     private javax.swing.JButton btnBorrar;
     private javax.swing.JButton btnBorrarSin;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

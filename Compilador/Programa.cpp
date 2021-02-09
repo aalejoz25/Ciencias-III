@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <iostream>
 using namespace std;
 int main(){
 int a=1,b=0;
@@ -9,5 +10,6 @@ if(a==1){
 }
 printf("Despues: %d \n",b);
 system("pause");
+
 return b;
 }
