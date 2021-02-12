@@ -26,8 +26,20 @@ espacio=[ ,\t,\r]+
 /* Comillas */
 ( "\"" ) {lexemas=yytext(); return Comillas;}
 
-/* Tipos de datos */
-( byte | int | char | long | float | double ) {lexemas=yytext(); return T_dato;}
+/* Tipo de dato Double */
+( double ) {lexemas=yytext(); return Double;}
+
+/* Tipo de dato Float */
+( float ) {lexemas=yytext(); return Float;}
+
+/* Tipo de dato Long */
+( long ) {lexemas=yytext(); return Long;}
+
+/* Tipo de dato Char */
+( char ) {lexemas=yytext(); return Char;}
+
+/* Tipo de dato Byte */
+( byte ) {lexemas=yytext(); return Byte;}
 
 /* Tipo de dato Int */
 ( int ) {lexemas=yytext(); return Int;}
@@ -113,11 +125,11 @@ espacio=[ ,\t,\r]+
 /* Punto y coma */
 ( ";" ) {lexemas=yytext(); return P_coma;}
 
+/* Coma */
+( "," ) {lexemas=yytext(); return Coma;}
+
 /* Punto */
 ( "." ) {lexemas=yytext(); return Punto;}
-
-/* Coma */
-( "," ) {lexemas=yytext(); return S_coma;}
 
 /* Identificador */
 {L}({L}|{D})* {lexemas=yytext(); return Identificador;}

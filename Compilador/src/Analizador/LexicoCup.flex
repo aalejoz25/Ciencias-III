@@ -19,8 +19,7 @@ espacio=[ ,\t,\r,\n]+
     }
 %}
 %%
-/* Palabra reservada Int */
-( int ) {return new Symbol(sym.Int, yychar, yyline, yytext());}
+
 
 /* Espacios en blanco */
 {espacio} {/*Ignore*/}
@@ -31,11 +30,26 @@ espacio=[ ,\t,\r,\n]+
 /* Comillas */
 ( "\"" ) {return new Symbol(sym.Comillas, yychar, yyline, yytext());}
 
-/* Tipos de datos */
-( byte | char | long | float | double ) {return new Symbol(sym.T_dato, yychar, yyline, yytext());}
+/* Tipo de dato Double */
+( double ) {return new Symbol(sym.Double, yychar, yyline, yytext());}
+
+/* Tipo de dato Float */
+( float ) {return new Symbol(sym.Float, yychar, yyline, yytext());}
+
+/* Tipo de dato Long */
+( long ) {return new Symbol(sym.Long, yychar, yyline, yytext());}
+
+/* Tipo de dato Char */
+( char ) {return new Symbol(sym.Char, yychar, yyline, yytext());}
+
+/* Tipo de dato Byte */
+( byte ) {return new Symbol(sym.Byte, yychar, yyline, yytext());}
 
 /* Void */
 ( void ) {return new Symbol(sym.Void, yychar, yyline, yytext());}
+
+/* Tipo de dato Int */
+( int ) {return new Symbol(sym.Int, yychar, yyline, yytext());}
 
 /* Tipo de dato String */
 ( String ) {return new Symbol(sym.Cadena, yychar, yyline, yytext());}
@@ -112,11 +126,11 @@ espacio=[ ,\t,\r,\n]+
 /* Punto y coma */
 ( ";" ) {return new Symbol(sym.P_coma, yychar, yyline, yytext());}
 
+/* Coma */
+( ";" ) {return new Symbol(sym.Coma, yychar, yyline, yytext());}
+
 /* Punto */
 ( "." ) {return new Symbol(sym.Punto, yychar, yyline, yytext());}
-
-/* Coma */
-( "," ) {return new Symbol(sym.S_coma, yychar, yyline, yytext());}
 
 /* Identificador */
 {L}({L}|{D})* {return new Symbol(sym.Identificador, yychar, yyline, yytext());}

@@ -186,21 +186,32 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 case Cadena:
                     resultado += "  <Tipo de dato>\t" + lexicos.lexemas + "\n";
                     break;
-                case T_dato:
-                    resultado += "  <Tipo de dato>\t" + lexicos.lexemas + "\n";
+                case Int:
+                    resultado += "  <Reservada int>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Void:
+                    resultado += "  <Reservada void>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Double:
+                    resultado += "  <Reservada double>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Float:
+                    resultado += "  <Reservada float>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Long:
+                    resultado += "  <Reservada long>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Char:
+                    resultado += "  <Reservada char>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Byte:
+                    resultado += "  <Reservada byte>\t" + lexicos.lexemas + "\n";
                     break;
                 case If:
                     resultado += "  <Reservada if>\t" + lexicos.lexemas + "\n";
                     break;
                 case Else:
                     resultado += "  <Reservada else>\t" + lexicos.lexemas + "\n";
-                    break;
-                case Int:
-                    resultado += "  <Reservada int>\t" + lexicos.lexemas + "\n";
-                    break;
-                    
-                 case Void:
-                    resultado += "  <Reservada void>\t" + lexicos.lexemas + "\n";
                     break;
                 case Igual:
                     resultado += "  <Operador igual>\t" + lexicos.lexemas + "\n";
@@ -222,19 +233,19 @@ public class FrmAnalizador extends javax.swing.JFrame {
                     break;
                 case Op_And:
                     resultado += "  <Op And>\t\t" + lexicos.lexemas + "\n";
-                    break;                    
+                    break;
                 case Op_Or:
                     resultado += "  <Op Or>\t" + lexicos.lexemas + "\n";
-                    break;                    
+                    break;
                 case Op_Not:
                     resultado += "  <Op Not>\t" + lexicos.lexemas + "\n";
-                    break;                    
+                    break;
                 case Op_Nand:
                     resultado += "  <Op Nand>\t" + lexicos.lexemas + "\n";
-                    break;                    
+                    break;
                 case Op_Nor:
                     resultado += "  <Op Nor>\t" + lexicos.lexemas + "\n";
-                    break;                    
+                    break;
                 case Op_incremento:
                     resultado += "  <Operador incremento>\t" + lexicos.lexemas + "\n";
                     break;
@@ -270,18 +281,18 @@ public class FrmAnalizador extends javax.swing.JFrame {
                     break;
                 case Printf:
                     resultado += "  <Reservada printf>\t" + lexicos.lexemas + "\n";
-                    break;                    
+                    break;
                 case P_coma:
                     resultado += "  <Punto y coma>\t" + lexicos.lexemas + "\n";
                     break;
-                 case S_coma:
+                case Coma:
                     resultado += "  <Coma>\t" + lexicos.lexemas + "\n";
                     break;
                 case Punto:
                     resultado += "  <Punto>\t\t" + lexicos.lexemas + "\n";
                     break;
                 case Identificador:
-                    resultado += "  <Identificador>\t\t" + lexicos.lexemas + "\n";
+                    resultado += "  <Identificador>\t" + lexicos.lexemas + "\n";
                     break;
                 case Numero:
                     resultado += "  <Numero>\t\t" + lexicos.lexemas + "\n";
