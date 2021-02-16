@@ -9,7 +9,7 @@ import java_cup.runtime.Symbol;
 %char
 L=[a-zA-Z_]+
 D=[0-9]+
-espacio=[ ,\t,\r,\n]+
+espacio=[ \t\r\n]+
 %{
     private Symbol symbol(int type, Object value){
         return new Symbol(type, yyline, yycolumn, value);
@@ -72,6 +72,55 @@ espacio=[ ,\t,\r,\n]+
 /* Palabra reservada Printf */
 ( printf ) {return new Symbol(sym.Printf, yychar, yyline, yytext());}
 
+/* Palabra reservada Return */
+( return ) {return new Symbol(sym.Return, yychar, yyline, yytext());}
+
+/* Palabra reservada System */
+( system ) {return new Symbol(sym.Sistema, yychar, yyline, yytext());}
+
+/* Palabra reservada Pause */
+( pause ) {return new Symbol(sym.Pause, yychar, yyline, yytext());}
+
+/* Palabra reservada Include */
+( #include ) {return new Symbol(sym.Include, yychar, yyline, yytext());}
+
+
+
+
+
+/* Palabra reservada Define */
+( #define ) {return new Symbol(sym.Define, yychar, yyline, yytext());}
+
+/* Palabra reservada Struct */
+( struct ) {return new Symbol(sym.Struct, yychar, yyline, yytext());}
+
+/* Palabra reservada Register */
+( register ) {return new Symbol(sym.Register, yychar, yyline, yytext());}
+
+/* Palabra reservada Union */
+( union ) {return new Symbol(sym.Union, yychar, yyline, yytext());}
+
+
+
+
+/* Reservada Using namespace std */
+( using namespace std ) {return new Symbol(sym.Using, yychar, yyline, yytext());}
+
+/* Reservada Scanf */
+( scanf ) {return new Symbol(sym.Scanf, yychar, yyline, yytext());}
+
+/* Reservada Cin */
+( cin ) {return new Symbol(sym.Cin, yychar, yyline, yytext());}
+
+/* Reservada Cout */
+( cout ) {return new Symbol(sym.Cout, yychar, yyline, yytext());}
+
+/* Reservada Switch */
+( switch ) {return new Symbol(sym.Switch, yychar, yyline, yytext());}
+
+/* Reservada Case */
+( case ) {return new Symbol(sym.Case, yychar, yyline, yytext());}
+
 /* Operador Igual */
 ( "=" ) {return new Symbol(sym.Igual, yychar, yyline, yytext());}
 
@@ -87,20 +136,110 @@ espacio=[ ,\t,\r,\n]+
 /* Operador Division */
 ( "/" ) {return new Symbol(sym.Division, yychar, yyline, yytext());}
 
-/* Operadores logicos */
-( "&&" | "||" | "!" | "&" | "|" ) {return new Symbol(sym.Op_logico, yychar, yyline, yytext());}
 
-/*Operadores Relacionales */
-( ">" | "<" | "==" | "!=" | ">=" | "<=" | "<<" | ">>" ) {return new Symbol(sym.Op_relacional, yychar, yyline, yytext());}
+
+/* Op_And */
+( "&&" ) {return new Symbol(sym.Op_And, yychar, yyline, yytext());}
+
+/* Op_Or */
+( "||" ) {return new Symbol(sym.Op_Or, yychar, yyline, yytext());}
+
+/* Op_Not */
+( "!" ) {return new Symbol(sym.Op_Not, yychar, yyline, yytext());}
+
+/* Op_And bit a bit */
+( "&" ) {return new Symbol(sym.Op_And_BaB, yychar, yyline, yytext());}
+
+/* Op_Or bit a bit */
+( "|" ) {return new Symbol(sym.Op_Or_BaB, yychar, yyline, yytext());}
+
+/* Op_Not bit a bit */
+( "~" ) {return new Symbol(sym.Op_Not_BaB, yychar, yyline, yytext());}
+
+/* Op_Xor bit a bit */
+( "^" ) {return new Symbol(sym.Op_Xor_BaB, yychar, yyline, yytext());}
+
+
+
+
+/*Operador Mayorque */
+( ">" ) {return new Symbol(sym.Mayorque, yychar, yyline, yytext());}
+
+/*Operador Menorque */
+( "<" ) {return new Symbol(sym.Menorque, yychar, yyline, yytext());}
+
+/*Operador Igual a */
+( "==" ) {return new Symbol(sym.Igual_a, yychar, yyline, yytext());}
+
+/*Operador Diferente */
+( "!=" ) {return new Symbol(sym.Diferente, yychar, yyline, yytext());}
+
+/*Operador Mayor_Igual */
+( ">=" ) {return new Symbol(sym.Mayor_Igual, yychar, yyline, yytext());}
+
+/*Operador Menor_Igual */
+( "<=" ) {return new Symbol(sym.Menor_Igual, yychar, yyline, yytext());}
+
+/*Operador Desplazamiento_Izqu */
+( "<<" ) {return new Symbol(sym.Desplazamiento_Izq, yychar, yyline, yytext());}
+
+/*Operador Desplazamiento_Der */
+( ">>" ) {return new Symbol(sym.Desplazamiento_Der, yychar, yyline, yytext());}
+
+
+
+
 
 /* Operadores Atribucion */
 ( "+=" | "-="  | "*=" | "/=" | "%=" | "=" ) {return new Symbol(sym.Op_atribucion, yychar, yyline, yytext());}
 
-/* Operadores Incremento y decremento */
-( "++" | "--" ) {return new Symbol(sym.Op_incremento, yychar, yyline, yytext());}
+/* Operador asigna suma */
+( "+=" ) {return new Symbol(sym.Op_asig_suma, yychar, yyline, yytext());}
+
+/* Operador asigna resta */
+( "-=" ) {return new Symbol(sym.Op_asig_resta, yychar, yyline, yytext());}
+
+/* Operador asigna multiplicacion */
+( "*=" ) {return new Symbol(sym.Op_asig_multiplicacion, yychar, yyline, yytext());}
+
+/* Operador asigna division */
+( "/=" ) {return new Symbol(sym.Op_asig_division, yychar, yyline, yytext());}
+
+/* Operador asigna modulo */
+( "%=" ) {return new Symbol(sym.Op_asig_modulo, yychar, yyline, yytext());}
+
+
+
+
+
+
+
+
+/* Operador Incremento*/
+( "++" ) {return new Symbol(sym.Op_incremento, yychar, yyline, yytext());}
+
+
+/* Operador decremento */
+( "--" ) {return new Symbol(sym.Op_decremento, yychar, yyline, yytext());}
+
+
+
+
+
 
 /*Operadores Booleanos*/
 ( true | false ) {return new Symbol(sym.Op_booleano, yychar, yyline, yytext());}
+
+
+/*Reservada True*/
+( true ) {return new Symbol(sym.True, yychar, yyline, yytext());}
+
+/*Reservada False*/
+( false ) {return new Symbol(sym.False, yychar, yyline, yytext());}
+
+
+
+
 
 /* Parentesis de apertura */
 ( "(" ) {return new Symbol(sym.Parent_a, yychar, yyline, yytext());}
@@ -127,7 +266,7 @@ espacio=[ ,\t,\r,\n]+
 ( ";" ) {return new Symbol(sym.P_coma, yychar, yyline, yytext());}
 
 /* Coma */
-( ";" ) {return new Symbol(sym.Coma, yychar, yyline, yytext());}
+ (",") {return new Symbol(sym.Coma, yychar, yyline, yytext());}
 
 /* Punto */
 ( "." ) {return new Symbol(sym.Punto, yychar, yyline, yytext());}

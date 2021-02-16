@@ -246,8 +246,12 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 case Op_Nor:
                     resultado += "  <Op Nor>\t" + lexicos.lexemas + "\n";
                     break;
-                case Op_incremento:
-                    resultado += "  <Operador incremento>\t" + lexicos.lexemas + "\n";
+                case True:
+                    resultado += "  <Reservada True>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case False:
+                    resultado += "  <Reservada False>\t" + lexicos.lexemas + "\n";
                     break;
                 case Op_relacional:
                     resultado += "  <Operador relacional>\t" + lexicos.lexemas + "\n";
@@ -279,6 +283,132 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 case Main:
                     resultado += "  <Reservada main>\t" + lexicos.lexemas + "\n";
                     break;
+                case Return:
+                    resultado += "  <Reservada return>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Sistema:
+                    resultado += "  <Reservada system>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Pause:
+                    resultado += "  <Reservada pause>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Include:
+                    resultado += "  <Reservada Include>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Define:
+                    resultado += "  <Reservada Define>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Struct:
+                    resultado += "  <Reservada Struct>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Register:
+                    resultado += "  <Reservada Register>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Union:
+                    resultado += "  <Reservada Union>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Using:
+                    resultado += "  <Reservada using namespace std>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Scanf:
+                    resultado += "  <Reservada scanf>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Cin:
+                    resultado += "  <Reservada cin>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Cout:
+                    resultado += "  <Reservada cout>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Switch:
+                    resultado += "  <Reservada switch>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Case:
+                    resultado += "  <Reservada case>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Mayorque:
+                    resultado += "  <Operador mayor que>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Menorque:
+                    resultado += "  <Operador menor que>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Igual_a:
+                    resultado += "  <Operador igual a>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Diferente:
+                    resultado += "  <Operador diferente>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Mayor_Igual:
+                    resultado += "  <Operador Mayor_Igual>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Menor_Igual:
+                    resultado += "  <Operador Mayor_Igual>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Desplazamiento_Izq:
+                    resultado += "  <Operador desplazamiento izq>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Desplazamiento_Der:
+                    resultado += "  <Operador desplazamiento izq>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_And_BaB:
+                    resultado += "  <Operador and bit a bit>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_Or_BaB:
+                    resultado += "  <Operador or bit a bit>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_Not_BaB:
+                    resultado += "  <Operador not bit a bit>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_Xor_BaB:
+                    resultado += "  <Operador Xor bit a bit>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_asig_suma:
+                    resultado += "  <Operador asigna suma>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_asig_resta:
+                    resultado += "  <Operador asigna resta>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_asig_multiplicacion:
+                    resultado += "  <Operador asigna multiplicacion>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_asig_division:
+                    resultado += "  <Operador asigna division>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_asig_modulo:
+                    resultado += "  <Operador asigna modulo>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_decremento:
+                    resultado += "  <Operador decremento>\t" + lexicos.lexemas + "\n";
+                    break;
+
                 case Printf:
                     resultado += "  <Reservada printf>\t" + lexicos.lexemas + "\n";
                     break;
@@ -286,7 +416,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
                     resultado += "  <Punto y coma>\t" + lexicos.lexemas + "\n";
                     break;
                 case Coma:
-                    resultado += "  <Coma>\t" + lexicos.lexemas + "\n";
+                    resultado += "  <Coma>\t\t" + lexicos.lexemas + "\n";
                     break;
                 case Punto:
                     resultado += "  <Punto>\t\t" + lexicos.lexemas + "\n";

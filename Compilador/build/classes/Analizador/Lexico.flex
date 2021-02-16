@@ -5,7 +5,7 @@ import static Analizador.Tokens.*;
 %type Tokens
 L=[a-zA-Z_]+                   
 D=[0-9]+         
-espacio=[ ,\t,\r]+
+espacio=[ \t\r]+
 %{
     public String lexemas;
 %}
@@ -53,6 +53,57 @@ espacio=[ ,\t,\r]+
 /* Palabra reservada If */
 ( if ) {lexemas=yytext(); return If;}
 
+/* Palabra reservada Return */
+( return ) {lexemas=yytext(); return Return;}
+
+/* Palabra reservada System */
+( system ) {lexemas=yytext(); return Sistema;}
+
+/* Palabra reservada Pause */
+( pause ) {lexemas=yytext(); return Pause;}
+
+/* Palabra reservada Scanf */
+( scanf ) {lexemas=yytext(); return Scanf;}
+
+/* Palabra reservada Include */
+( #include ) {lexemas=yytext(); return Include;}
+
+
+
+
+/* Palabra reservada Define */
+( #define ) {lexemas=yytext(); return Define;}
+
+/* Palabra reservada Struct */
+( struct ) {lexemas=yytext(); return Struct;}
+
+/* Palabra reservada Register */
+( register ) {lexemas=yytext(); return Register;}
+
+/* Palabra reservada Union */
+( union ) {lexemas=yytext(); return Union;}
+
+
+
+
+
+
+
+/* Reservada Using namespace std */
+( using namespace std ) {lexemas=yytext(); return Using;}
+
+/* Reservada Cin */
+( cin ) {lexemas=yytext(); return Cin;}
+
+/* Reservada Cout */
+( cout ) {lexemas=yytext(); return Cout;}
+
+/* Reservada Switch */
+( switch ) {lexemas=yytext(); return Switch;}
+
+/* Reservada Case */
+( case ) {lexemas=yytext(); return Case;}
+
 /* Palabra reservada Else */
 ( else ) {lexemas=yytext(); return Else;}
 
@@ -71,6 +122,8 @@ espacio=[ ,\t,\r]+
 /* Operador Division */
 ( "/" ) {lexemas=yytext(); return Division;}
 
+
+
 /* Op_And */
 ( "&&" ) {lexemas=yytext(); return Op_And;}
 
@@ -80,23 +133,102 @@ espacio=[ ,\t,\r]+
 /* Op_Not */
 ( "!" ) {lexemas=yytext(); return Op_Not;}
 
-/* Op_Nand */
-( "&" ) {lexemas=yytext(); return Op_Nand;}
+/* Op_And bit a bit */
+( "&" ) {lexemas=yytext(); return Op_And_BaB;}
 
-/* Op_And */
-( "|" ) {lexemas=yytext(); return Op_Nor;}
+/* Op_Or bit a bit */
+( "|" ) {lexemas=yytext(); return Op_Or_BaB;}
 
-/*Operadores Relacionales */
-( ">" | "<" | "==" | "!=" | ">=" | "<=" | "<<" | ">>" ) {lexemas = yytext(); return Op_relacional;}
+/* Op_Not bit a bit */
+( "~" ) {lexemas=yytext(); return Op_Not_BaB;}
 
-/* Operadores Atribucion */
-( "+=" | "-="  | "*=" | "/=" | "%=" ) {lexemas = yytext(); return Op_atribucion;}
+/* Op_Xor bit a bit */
+( "^" ) {lexemas=yytext(); return Op_Xor_BaB;}
 
-/* Operadores Incremento y decremento */
-( "++" | "--" ) {lexemas = yytext(); return Op_incremento;}
 
-/*Operadores Booleanos*/
-(true | false)      {lexemas = yytext(); return Op_booleano;}
+
+
+
+/*Operador MayorQue */
+( ">" ) {lexemas = yytext(); return Mayorque;}
+
+/*Operador MenorQue */
+( "<" ) {lexemas = yytext(); return Menorque;}
+
+/*Operador Igual a */
+( "==" ) {lexemas = yytext(); return Igual_a;}
+
+/*Operador diferente de */
+( "!=" ) {lexemas = yytext(); return Diferente;}
+
+/*Operador Mayor_Igual */
+( ">=" ) {lexemas = yytext(); return Mayor_Igual;}
+
+/*Operador Menor_Igual */
+( "<=" ) {lexemas = yytext(); return Menor_Igual;}
+
+/*Operador Desplazamiento_Izq */
+( "<<" ) {lexemas = yytext(); return Desplazamiento_Izq;}
+
+/*Operador Desplazamiento_Der */
+( ">>" ) {lexemas = yytext(); return Desplazamiento_Der;}
+
+
+/* Operador asigna suma */
+( "+=" ) {lexemas = yytext(); return Op_asig_suma;}
+
+/* Operador asigna resta */
+( "-=" ) {lexemas = yytext(); return Op_asig_resta;}
+
+/* Operador asigna multiplicacion */
+( "*=" ) {lexemas = yytext(); return Op_asig_multiplicacion;}
+
+/* Operador asigna division */
+( "/=" ) {lexemas = yytext(); return Op_asig_division;}
+
+/* Operador asigna modulo */
+( "%=" ) {lexemas = yytext(); return Op_asig_modulo;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Operador Incremento */
+( "++" ) {lexemas = yytext(); return Op_incremento;}
+
+/* Operador Decremento */
+( "--" ) {lexemas = yytext(); return Op_decremento;}
+
+
+
+
+
+
+
+
+/*Reservada True*/
+( true )      {lexemas = yytext(); return True;}
+
+/*Reservada False*/
+( false )      {lexemas = yytext(); return False;}
+
+
+
+
+
+
+
+
 
 /* Parentesis de apertura */
 ( "(" ) {lexemas=yytext(); return Parentesis_a;}
@@ -126,7 +258,7 @@ espacio=[ ,\t,\r]+
 ( ";" ) {lexemas=yytext(); return P_coma;}
 
 /* Coma */
-( "," ) {lexemas=yytext(); return Coma;}
+ (",")  {lexemas=yytext(); return Coma;}
 
 /* Punto */
 ( "." ) {lexemas=yytext(); return Punto;}
