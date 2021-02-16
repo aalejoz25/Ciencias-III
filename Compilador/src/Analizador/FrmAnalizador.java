@@ -89,7 +89,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnArchivo);
-        btnArchivo.setBounds(10, 112, 192, 45);
+        btnArchivo.setBounds(10, 130, 192, 45);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -108,7 +108,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
         jScrollPane1.setViewportView(Resultado);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 160, 359, 177);
+        jScrollPane1.setBounds(10, 180, 359, 177);
 
         btnASintactico.setBackground(new java.awt.Color(0, 0, 0));
         btnASintactico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -120,7 +120,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnASintactico);
-        btnASintactico.setBounds(10, 350, 197, 45);
+        btnASintactico.setBounds(20, 370, 195, 45);
 
         btnALexico.setBackground(new java.awt.Color(0, 0, 0));
         btnALexico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -133,14 +133,14 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnALexico);
-        btnALexico.setBounds(390, 110, 197, 37);
+        btnALexico.setBounds(390, 130, 197, 37);
 
         txtAnalizarLex.setColumns(20);
         txtAnalizarLex.setRows(5);
         jScrollPane2.setViewportView(txtAnalizarLex);
 
         jPanel2.add(jScrollPane2);
-        jScrollPane2.setBounds(390, 160, 359, 370);
+        jScrollPane2.setBounds(390, 180, 359, 370);
 
         btnBorrar.setBackground(new java.awt.Color(0, 0, 0));
         btnBorrar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -152,7 +152,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnBorrar);
-        btnBorrar.setBounds(640, 110, 106, 45);
+        btnBorrar.setBounds(640, 130, 106, 45);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -180,7 +180,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
         jScrollPane3.setViewportView(txtAnalizarSin);
 
         jPanel2.add(jScrollPane3);
-        jScrollPane3.setBounds(10, 400, 360, 130);
+        jScrollPane3.setBounds(10, 420, 360, 130);
 
         btnBorrarSin.setBackground(new java.awt.Color(0, 0, 0));
         btnBorrarSin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -192,12 +192,12 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnBorrarSin);
-        btnBorrarSin.setBounds(270, 348, 96, 45);
+        btnBorrarSin.setBounds(260, 370, 97, 45);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/name.png"))); // NOI18N
         jLabel3.setToolTipText("");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(500, 50, 230, 100);
+        jLabel3.setBounds(500, 60, 230, 100);
         jPanel2.add(jLabel4);
         jLabel4.setBounds(0, 0, 0, 0);
 
@@ -208,7 +208,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo.png"))); // NOI18N
         jPanel2.add(jLabel7);
-        jLabel7.setBounds(540, 0, 70, 90);
+        jLabel7.setBounds(540, 10, 70, 90);
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 660));
         jPanel2.getAccessibleContext().setAccessibleName("prueba");
@@ -231,7 +231,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
             switch (token) {
                 
                 case Using:
-                    resultado += "  <Reservada using namespace std>\t" + lexicos.lexemas + "\n";
+                    resultado += "  <Reservada using \n namespace std>\t" + lexicos.lexemas + "\n";
                     break;
                     
                 case Linea:

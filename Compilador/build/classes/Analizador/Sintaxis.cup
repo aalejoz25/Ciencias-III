@@ -31,7 +31,9 @@ PROGRAMA ::=
 ;
 INCLUDE ::=
      Include Menorque Identificador Punto Identificador Mayorque INCLUDE |
-     Include Menorque Identificador Punto Identificador Mayorque Using P_coma
+     Include Menorque Identificador Punto Identificador Mayorque Using P_coma |
+    Include Menorque Identificador Mayorque INCLUDE |
+     Include Menorque Identificador Mayorque Using P_coma
      
 ;
 INICIO ::= 
