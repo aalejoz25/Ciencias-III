@@ -3,16 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+=======
+            <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/Lexico.java</file>
+>>>>>>> Proyecto-base
             <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/LexicoCup.flex</file>
             <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/Tokens.java</file>
             <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/Analizadores.java</file>
             <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/FrmAnalizador.java</file>
             <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/Sintaxis.cup</file>
+<<<<<<< HEAD
             <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/sym.java</file>
             <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/LexicoCup.java</file>
             <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/Sintaxis.java</file>
             <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/Lexico.flex</file>
             <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/Programa.cpp</file>
+=======
+            <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/LexicoCup.java</file>
+            <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/sym.java</file>
+            <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/Sintaxis.java</file>
+            <file>file:/D:/Alvaro/Repositorios/Ciencias-III/Compilador/src/Analizador/Lexico.flex</file>
+>>>>>>> Proyecto-base
         </group>
     </open-files>
 </project-private>
