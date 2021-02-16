@@ -89,7 +89,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnArchivo);
-        btnArchivo.setBounds(10, 112, 192, 45);
+        btnArchivo.setBounds(10, 130, 192, 45);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -108,7 +108,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
         jScrollPane1.setViewportView(Resultado);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 160, 359, 177);
+        jScrollPane1.setBounds(10, 180, 359, 177);
 
         btnASintactico.setBackground(new java.awt.Color(0, 0, 0));
         btnASintactico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -120,7 +120,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnASintactico);
-        btnASintactico.setBounds(10, 350, 197, 45);
+        btnASintactico.setBounds(20, 370, 195, 45);
 
         btnALexico.setBackground(new java.awt.Color(0, 0, 0));
         btnALexico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -133,14 +133,14 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnALexico);
-        btnALexico.setBounds(390, 110, 197, 37);
+        btnALexico.setBounds(390, 130, 197, 37);
 
         txtAnalizarLex.setColumns(20);
         txtAnalizarLex.setRows(5);
         jScrollPane2.setViewportView(txtAnalizarLex);
 
         jPanel2.add(jScrollPane2);
-        jScrollPane2.setBounds(390, 160, 359, 370);
+        jScrollPane2.setBounds(390, 180, 359, 370);
 
         btnBorrar.setBackground(new java.awt.Color(0, 0, 0));
         btnBorrar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -152,7 +152,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnBorrar);
-        btnBorrar.setBounds(640, 110, 106, 45);
+        btnBorrar.setBounds(640, 130, 106, 45);
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -180,7 +180,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
         jScrollPane3.setViewportView(txtAnalizarSin);
 
         jPanel2.add(jScrollPane3);
-        jScrollPane3.setBounds(10, 400, 360, 130);
+        jScrollPane3.setBounds(10, 420, 360, 130);
 
         btnBorrarSin.setBackground(new java.awt.Color(0, 0, 0));
         btnBorrarSin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -192,12 +192,12 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnBorrarSin);
-        btnBorrarSin.setBounds(270, 348, 96, 45);
+        btnBorrarSin.setBounds(260, 370, 97, 45);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/name.png"))); // NOI18N
         jLabel3.setToolTipText("");
         jPanel2.add(jLabel3);
-        jLabel3.setBounds(500, 50, 230, 100);
+        jLabel3.setBounds(500, 60, 230, 100);
         jPanel2.add(jLabel4);
         jLabel4.setBounds(0, 0, 0, 0);
 
@@ -208,7 +208,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logo.png"))); // NOI18N
         jPanel2.add(jLabel7);
-        jLabel7.setBounds(540, 0, 70, 90);
+        jLabel7.setBounds(540, 10, 70, 90);
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 660));
         jPanel2.getAccessibleContext().setAccessibleName("prueba");
@@ -229,6 +229,11 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 return;
             }
             switch (token) {
+                
+                case Using:
+                    resultado += "  <Reservada using \n namespace std>\t" + lexicos.lexemas + "\n";
+                    break;
+                    
                 case Linea:
                     cont++;
                     resultado += "LINEA " + cont + "\n";
@@ -239,17 +244,32 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 case Cadena:
                     resultado += "  <Tipo de dato>\t" + lexicos.lexemas + "\n";
                     break;
-                case T_dato:
-                    resultado += "  <Tipo de dato>\t" + lexicos.lexemas + "\n";
+                case Int:
+                    resultado += "  <Reservada int>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Void:
+                    resultado += "  <Reservada void>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Double:
+                    resultado += "  <Reservada double>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Float:
+                    resultado += "  <Reservada float>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Long:
+                    resultado += "  <Reservada long>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Char:
+                    resultado += "  <Reservada char>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Byte:
+                    resultado += "  <Reservada byte>\t" + lexicos.lexemas + "\n";
                     break;
                 case If:
                     resultado += "  <Reservada if>\t" + lexicos.lexemas + "\n";
                     break;
                 case Else:
                     resultado += "  <Reservada else>\t" + lexicos.lexemas + "\n";
-                    break;
-                case Int:
-                    resultado += "  <Reservada int>\t" + lexicos.lexemas + "\n";
                     break;
                 case Igual:
                     resultado += "  <Operador igual>\t" + lexicos.lexemas + "\n";
@@ -271,21 +291,25 @@ public class FrmAnalizador extends javax.swing.JFrame {
                     break;
                 case Op_And:
                     resultado += "  <Op And>\t\t" + lexicos.lexemas + "\n";
-                    break;                    
+                    break;
                 case Op_Or:
                     resultado += "  <Op Or>\t" + lexicos.lexemas + "\n";
-                    break;                    
+                    break;
                 case Op_Not:
                     resultado += "  <Op Not>\t" + lexicos.lexemas + "\n";
-                    break;                    
+                    break;
                 case Op_Nand:
                     resultado += "  <Op Nand>\t" + lexicos.lexemas + "\n";
-                    break;                    
+                    break;
                 case Op_Nor:
                     resultado += "  <Op Nor>\t" + lexicos.lexemas + "\n";
-                    break;                    
-                case Op_incremento:
-                    resultado += "  <Operador incremento>\t" + lexicos.lexemas + "\n";
+                    break;
+                case True:
+                    resultado += "  <Reservada True>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case False:
+                    resultado += "  <Reservada False>\t" + lexicos.lexemas + "\n";
                     break;
                 case Op_relacional:
                     resultado += "  <Operador relacional>\t" + lexicos.lexemas + "\n";
@@ -317,17 +341,144 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 case Main:
                     resultado += "  <Reservada main>\t" + lexicos.lexemas + "\n";
                     break;
+                case Return:
+                    resultado += "  <Reservada return>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Sistema:
+                    resultado += "  <Reservada system>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Pause:
+                    resultado += "  <Reservada pause>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Include:
+                    resultado += "  <Reservada Include>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Define:
+                    resultado += "  <Reservada Define>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Struct:
+                    resultado += "  <Reservada Struct>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Register:
+                    resultado += "  <Reservada Register>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Union:
+                    resultado += "  <Reservada Union>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                
+
+                case Scanf:
+                    resultado += "  <Reservada scanf>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Cin:
+                    resultado += "  <Reservada cin>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Cout:
+                    resultado += "  <Reservada cout>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Switch:
+                    resultado += "  <Reservada switch>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Case:
+                    resultado += "  <Reservada case>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Mayorque:
+                    resultado += "  <Operador mayor que>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Menorque:
+                    resultado += "  <Operador menor que>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Igual_a:
+                    resultado += "  <Operador igual a>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Diferente:
+                    resultado += "  <Operador diferente>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Mayor_Igual:
+                    resultado += "  <Operador Mayor_Igual>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Menor_Igual:
+                    resultado += "  <Operador Mayor_Igual>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Desplazamiento_Izq:
+                    resultado += "  <Operador desplazamiento izq>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Desplazamiento_Der:
+                    resultado += "  <Operador desplazamiento izq>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_And_BaB:
+                    resultado += "  <Operador and bit a bit>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_Or_BaB:
+                    resultado += "  <Operador or bit a bit>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_Not_BaB:
+                    resultado += "  <Operador not bit a bit>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_Xor_BaB:
+                    resultado += "  <Operador Xor bit a bit>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_asig_suma:
+                    resultado += "  <Operador asigna suma>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_asig_resta:
+                    resultado += "  <Operador asigna resta>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_asig_multiplicacion:
+                    resultado += "  <Operador asigna multiplicacion>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_asig_division:
+                    resultado += "  <Operador asigna division>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_asig_modulo:
+                    resultado += "  <Operador asigna modulo>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Op_decremento:
+                    resultado += "  <Operador decremento>\t" + lexicos.lexemas + "\n";
+                    break;
+
                 case Printf:
                     resultado += "  <Reservada printf>\t" + lexicos.lexemas + "\n";
-                    break;                    
+                    break;
                 case P_coma:
                     resultado += "  <Punto y coma>\t" + lexicos.lexemas + "\n";
+                    break;
+                case Coma:
+                    resultado += "  <Coma>\t\t" + lexicos.lexemas + "\n";
                     break;
                 case Punto:
                     resultado += "  <Punto>\t\t" + lexicos.lexemas + "\n";
                     break;
                 case Identificador:
-                    resultado += "  <Identificador>\t\t" + lexicos.lexemas + "\n";
+                    resultado += "  <Identificador>\t" + lexicos.lexemas + "\n";
                     break;
                 case Numero:
                     resultado += "  <Numero>\t\t" + lexicos.lexemas + "\n";
