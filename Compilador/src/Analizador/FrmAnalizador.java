@@ -176,6 +176,11 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 return;
             }
             switch (token) {
+                
+                case Using:
+                    resultado += "  <Reservada using namespace std>\t" + lexicos.lexemas + "\n";
+                    break;
+                    
                 case Linea:
                     cont++;
                     resultado += "LINEA " + cont + "\n";
@@ -314,9 +319,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
                     resultado += "  <Reservada Union>\t" + lexicos.lexemas + "\n";
                     break;
 
-                case Using:
-                    resultado += "  <Reservada using namespace std>\t" + lexicos.lexemas + "\n";
-                    break;
+                
 
                 case Scanf:
                     resultado += "  <Reservada scanf>\t" + lexicos.lexemas + "\n";

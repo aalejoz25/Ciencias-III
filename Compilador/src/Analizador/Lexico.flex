@@ -90,7 +90,7 @@ espacio=[ \t\r]+
 
 
 /* Reservada Using namespace std */
-( using namespace std ) {lexemas=yytext(); return Using;}
+( "using namespace std" ) {lexemas=yytext(); return Using;}
 
 /* Reservada Cin */
 ( cin ) {lexemas=yytext(); return Cin;}

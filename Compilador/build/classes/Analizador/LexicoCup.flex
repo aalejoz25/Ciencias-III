@@ -104,7 +104,7 @@ espacio=[ \t\r\n]+
 
 
 /* Reservada Using namespace std */
-( using namespace std ) {return new Symbol(sym.Using, yychar, yyline, yytext());}
+( "using namespace std" ) {return new Symbol(sym.Using, yychar, yyline, yytext());}
 
 /* Reservada Scanf */
 ( scanf ) {return new Symbol(sym.Scanf, yychar, yyline, yytext());}
