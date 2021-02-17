@@ -30,6 +30,12 @@ espacio=[ \t\r\n]+
 /* Comillas */
 ( "\"" ) {return new Symbol(sym.Comillas, yychar, yyline, yytext());}
 
+/* Comilla_Simple */
+( "'" ) {return new Symbol(sym.Comilla_Simple, yychar, yyline, yytext());}
+
+/* Dos_puntos */
+( ":" ) {return new Symbol(sym.Dos_puntos, yychar, yyline, yytext());}
+
 /* Tipo de dato Double */
 ( double ) {return new Symbol(sym.Double, yychar, yyline, yytext());}
 
@@ -120,6 +126,12 @@ espacio=[ \t\r\n]+
 
 /* Reservada Case */
 ( case ) {return new Symbol(sym.Case, yychar, yyline, yytext());}
+
+/* Reservada Default */
+( default ) {return new Symbol(sym.Default, yychar, yyline, yytext());}
+
+/* Reservada Break */
+( break ) {return new Symbol(sym.Break, yychar, yyline, yytext());}
 
 /* Operador Igual */
 ( "=" ) {return new Symbol(sym.Igual, yychar, yyline, yytext());}

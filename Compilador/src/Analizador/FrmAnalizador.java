@@ -229,17 +229,21 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 return;
             }
             switch (token) {
-                
+
                 case Using:
                     resultado += "  <Reservada using \n namespace std>\t" + lexicos.lexemas + "\n";
                     break;
-                    
+
                 case Linea:
                     cont++;
                     resultado += "LINEA " + cont + "\n";
                     break;
                 case Comillas:
                     resultado += "  <Comillas>\t\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Comilla_Simple:
+                    resultado += "  <Comilla Simple>\t" + lexicos.lexemas + "\n";
                     break;
                 case Cadena:
                     resultado += "  <Tipo de dato>\t" + lexicos.lexemas + "\n";
@@ -372,8 +376,6 @@ public class FrmAnalizador extends javax.swing.JFrame {
                     resultado += "  <Reservada Union>\t" + lexicos.lexemas + "\n";
                     break;
 
-                
-
                 case Scanf:
                     resultado += "  <Reservada scanf>\t" + lexicos.lexemas + "\n";
                     break;
@@ -392,6 +394,14 @@ public class FrmAnalizador extends javax.swing.JFrame {
 
                 case Case:
                     resultado += "  <Reservada case>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Default:
+                    resultado += "  <Reservada default>\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Break:
+                    resultado += "  <Reservada break>\t" + lexicos.lexemas + "\n";
                     break;
 
                 case Mayorque:
@@ -476,6 +486,10 @@ public class FrmAnalizador extends javax.swing.JFrame {
                     break;
                 case Punto:
                     resultado += "  <Punto>\t\t" + lexicos.lexemas + "\n";
+                    break;
+
+                case Dos_puntos:
+                    resultado += "  <Dos Puntos>\t\t" + lexicos.lexemas + "\n";
                     break;
                 case Identificador:
                     resultado += "  <Identificador>\t" + lexicos.lexemas + "\n";

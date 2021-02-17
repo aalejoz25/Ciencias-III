@@ -26,6 +26,12 @@ espacio=[ \t\r]+
 /* Comillas */
 ( "\"" ) {lexemas=yytext(); return Comillas;}
 
+/* Comilla_Simple */
+( "'" ) {lexemas=yytext(); return Comilla_Simple;}
+
+/* Dos_puntos */
+( ":" ) {lexemas=yytext(); return Dos_puntos;}
+
 /* Tipo de dato Double */
 ( double ) {lexemas=yytext(); return Double;}
 
@@ -103,6 +109,12 @@ espacio=[ \t\r]+
 
 /* Reservada Case */
 ( case ) {lexemas=yytext(); return Case;}
+
+/* Reservada Default */
+( default ) {lexemas=yytext(); return Default;}
+
+/* Reservada Break */
+( break ) {lexemas=yytext(); return Break;}
 
 /* Palabra reservada Else */
 ( else ) {lexemas=yytext(); return Else;}

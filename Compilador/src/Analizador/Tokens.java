@@ -76,6 +76,9 @@ public enum Tokens {
     Define,
     Struct,
     Register,
-    Union
-
+    Union,
+    Default,
+    Comilla_Simple,
+    Dos_puntos,
+    Break
 }
