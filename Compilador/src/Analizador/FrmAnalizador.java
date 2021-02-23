@@ -10,8 +10,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.io.Reader;
 import java.io.StringReader;
 import java.nio.file.Files;
@@ -19,6 +21,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java_cup.runtime.Symbol;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -64,6 +67,9 @@ public class FrmAnalizador extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 0, 0));
@@ -89,26 +95,26 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnArchivo);
-        btnArchivo.setBounds(10, 130, 192, 45);
+        btnArchivo.setBounds(30, 130, 192, 45);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("David Ricardo Lopez Amador 20161020505");
         jPanel2.add(jLabel1);
-        jLabel1.setBounds(10, 66, 306, 17);
+        jLabel1.setBounds(40, 70, 310, 17);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Alvaro Alejandro Zarabanda 20161020507");
         jPanel2.add(jLabel2);
-        jLabel2.setBounds(10, 43, 302, 17);
+        jLabel2.setBounds(40, 40, 310, 17);
 
         Resultado.setColumns(20);
         Resultado.setRows(5);
         jScrollPane1.setViewportView(Resultado);
 
         jPanel2.add(jScrollPane1);
-        jScrollPane1.setBounds(10, 180, 359, 177);
+        jScrollPane1.setBounds(30, 180, 359, 177);
 
         btnASintactico.setBackground(new java.awt.Color(0, 0, 0));
         btnASintactico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -120,7 +126,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnASintactico);
-        btnASintactico.setBounds(20, 370, 195, 45);
+        btnASintactico.setBounds(40, 370, 210, 45);
 
         btnALexico.setBackground(new java.awt.Color(0, 0, 0));
         btnALexico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -133,14 +139,14 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnALexico);
-        btnALexico.setBounds(390, 130, 197, 37);
+        btnALexico.setBounds(400, 130, 197, 40);
 
         txtAnalizarLex.setColumns(20);
         txtAnalizarLex.setRows(5);
         jScrollPane2.setViewportView(txtAnalizarLex);
 
         jPanel2.add(jScrollPane2);
-        jScrollPane2.setBounds(390, 180, 359, 370);
+        jScrollPane2.setBounds(400, 180, 359, 380);
 
         btnBorrar.setBackground(new java.awt.Color(0, 0, 0));
         btnBorrar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -157,30 +163,45 @@ public class FrmAnalizador extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Generar Objeto");
+        jButton1.setText("<html><center>Generar Archivo<br>Intermedio<html>");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton1);
-        jButton1.setBounds(10, 589, 193, 45);
+        jButton1.setBounds(40, 570, 210, 70);
 
         jButton2.setBackground(new java.awt.Color(0, 0, 0));
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Generar Ejecutable");
+        jButton2.setText("Generar Assembler");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton2);
-        jButton2.setBounds(277, 589, 233, 45);
+        jButton2.setBounds(280, 580, 233, 50);
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Ejecutar");
+        jButton3.setText("Generar bin");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton3);
-        jButton3.setBounds(602, 589, 117, 45);
+        jButton3.setBounds(540, 580, 190, 50);
 
         txtAnalizarSin.setColumns(20);
         txtAnalizarSin.setRows(5);
         jScrollPane3.setViewportView(txtAnalizarSin);
 
         jPanel2.add(jScrollPane3);
-        jScrollPane3.setBounds(10, 420, 360, 130);
+        jScrollPane3.setBounds(30, 420, 360, 140);
 
         btnBorrarSin.setBackground(new java.awt.Color(0, 0, 0));
         btnBorrarSin.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -192,7 +213,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
             }
         });
         jPanel2.add(btnBorrarSin);
-        btnBorrarSin.setBounds(260, 370, 97, 45);
+        btnBorrarSin.setBounds(280, 370, 97, 45);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/name.png"))); // NOI18N
         jLabel3.setToolTipText("");
@@ -210,8 +231,45 @@ public class FrmAnalizador extends javax.swing.JFrame {
         jPanel2.add(jLabel7);
         jLabel7.setBounds(540, 10, 70, 90);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 790, 660));
+        jButton4.setBackground(new java.awt.Color(0, 0, 0));
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setText("Generar Ejecutable");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton4);
+        jButton4.setBounds(130, 660, 250, 50);
+
+        jButton5.setBackground(new java.awt.Color(0, 0, 0));
+        jButton5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setText("Ejecutar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton5);
+        jButton5.setBounds(410, 660, 170, 50);
+
+        jButton6.setBackground(new java.awt.Color(0, 0, 0));
+        jButton6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
+        jButton6.setText("Guardar Cambios");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton6);
+        jButton6.setBounds(260, 140, 130, 31);
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 730));
         jPanel2.getAccessibleContext().setAccessibleName("prueba");
+        jPanel2.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -555,6 +613,74 @@ public class FrmAnalizador extends javax.swing.JFrame {
         txtAnalizarSin.setText(null);
     }//GEN-LAST:event_btnBorrarSinActionPerformed
 
+    //Genera ejecutable
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        try {
+            String[] gejecutable = {"ejecutable.bat"};
+            Runtime.getRuntime().exec(gejecutable);
+            System.out.println("Ejecutable generado");
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    //Genera arcjivo intermedio      
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            String[] intermedio = {"intermedio.bat"};
+            Runtime.getRuntime().exec(intermedio);
+            System.out.println("Generado archivo intermedio");
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    //generar assembler
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            String[] gassembler = {"ensamblador.bat"};
+            Runtime.getRuntime().exec(gassembler);
+            System.out.println("Se ha generado el archivo assembler");
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    //Genera archivo binario
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            String[] gobjeto = {"objeto.bat"};
+            Runtime.getRuntime().exec(gobjeto);
+            System.out.println("archivo obj generado");
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    //Ejecuta programa
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        try {
+            String[] comando = {"correr.bat"};
+            Runtime.getRuntime().exec(comando);
+            System.out.println("Ejecucion del convertidor de cpp a assembler");
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    //guarda cambios en archivo
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        try {
+            FileWriter cambios = new FileWriter("..//Compilador//Programa.cpp");
+            String codigo = Resultado.getText().replace("\n", "\r\n");
+            PrintWriter imprime = new PrintWriter(cambios);
+            imprime.print(codigo);
+            cambios.close();
+            JOptionPane.showMessageDialog(rootPane, "Cambios guardados");
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -600,6 +726,9 @@ public class FrmAnalizador extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

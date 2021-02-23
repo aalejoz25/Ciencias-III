@@ -65,7 +65,7 @@ SENTENCIA ::=
 
 
 DECLARACION ::=   
-
+    Cin Desplazamiento_Der Identificador P_coma| 
     Identificador Igual Numero P_coma |
 
     Char Identificador P_coma |
