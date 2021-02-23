@@ -187,7 +187,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Generar bin");
+        jButton3.setText("Generar Obj");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -379,9 +379,7 @@ public class FrmAnalizador extends javax.swing.JFrame {
                 case Op_atribucion:
                     resultado += "  <Operador atribucion>\t" + lexicos.lexemas + "\n";
                     break;
-                case Op_booleano:
-                    resultado += "  <Operador booleano>\t" + lexicos.lexemas + "\n";
-                    break;
+                
                 case Parentesis_a:
                     resultado += "  <Parentesis de apertura>\t" + lexicos.lexemas + "\n";
                     break;
@@ -486,11 +484,11 @@ public class FrmAnalizador extends javax.swing.JFrame {
                     break;
 
                 case Desplazamiento_Izq:
-                    resultado += "  <Operador desplazamiento izq>\t" + lexicos.lexemas + "\n";
+                    resultado += "  <Operador \ndesplazamiento izq>\t" + lexicos.lexemas + "\n";
                     break;
 
                 case Desplazamiento_Der:
-                    resultado += "  <Operador desplazamiento izq>\t" + lexicos.lexemas + "\n";
+                    resultado += "  <Operador \ndesplazamiento izq>\t" + lexicos.lexemas + "\n";
                     break;
 
                 case Op_And_BaB:

@@ -239,8 +239,7 @@ espacio=[ \t\r\n]+
 
 
 
-/*Operadores Booleanos*/
-( true | false ) {return new Symbol(sym.Op_booleano, yychar, yyline, yytext());}
+
 
 
 /*Reservada True*/

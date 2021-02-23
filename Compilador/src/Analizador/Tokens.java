@@ -28,7 +28,7 @@ public enum Tokens {
     Op_incremento,
     Op_relacional,
     Op_atribucion,
-    Op_booleano,
+    
     Parentesis_a,
     Parentesis_c,
     Llave_a,

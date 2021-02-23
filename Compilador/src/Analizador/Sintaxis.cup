@@ -15,18 +15,23 @@ parser code
 }
 :};
 
-terminal Linea, Op_asig_suma, Op_asig_multiplicacion, Op_asig_modulo, Op_asig_division, Op_asig_resta, Include, Pause, Comillas, Return, Cadena, Int, Void, Double, Float, Long, Char, Byte, If, Else, Do, While, For, 
+terminal Linea, Op_asig_suma, Op_asig_multiplicacion, Op_asig_modulo, Op_asig_division, Op_asig_resta, Include, Pause, Comillas, Return, 
+    Cadena, Int, Void, Double, Float, Long, Char, Byte, If, Else, Do, While, For, 
     Igual, Suma, Resta, Define, Struct, Register, Union, Multiplicacion, Division, Op_logico, Op_relacional, Printf, Sistema, 
-    Op_atribucion, True, False, Mayorque, Menorque, Igual_a, Diferente, Mayor_Igual, Menor_Igual, Using, Scanf, Cin, Cout, Switch, Case, Op_incremento, Op_decremento, Op_booleano, Parent_a, Parent_c,
+    Op_atribucion, True, False, Mayorque, Menorque, Igual_a, Diferente, Mayor_Igual, Menor_Igual, Using, Scanf, Cin, Cout, Switch, Case, 
+    Op_incremento, Op_decremento, Parent_a, Parent_c,
     Desplazamiento_Izq, Desplazamiento_Der, Llave_a, Llave_c, Corchete_a, Corchete_c, Main, P_coma, Coma, Punto, Identificador,
     Numero, Break, Default, Dos_puntos, Comilla_Simple, Op_And, Op_Or, Op_Not, Op_And_BaB, Op_Or_BaB, Op_Not_BaB, Op_Xor_BaB, ERROR;
+
+
 non terminal INICIO, CASE, DEFAULT, SWITCH, SENTENCIA, DECLARACION, DECLARACION_FOR, IF, IF_ELSE,
-    WHILE, PROGRAMA, INCLUDE, DO_WHILE, PRINTF, FOR, SENTENCIA_BOOLEANA, SENTENCIA_FOR, SENTENCIA_PRINTF;
+    WHILE, PROGRAMA, INCLUDE, DO_WHILE, PRINTF, FOR, SENTENCIA_BOOLEANA, SENTENCIA_FOR, SENTENCIA_PRINTF,  OP_BOOLEANO;
 
 start with PROGRAMA;
 
 PROGRAMA ::=
-    INCLUDE INICIO
+    INCLUDE INICIO|
+    INICIO
     
 ;
 INCLUDE ::=
@@ -42,7 +47,6 @@ INICIO ::=
     Main Parent_a Parent_c Llave_a SENTENCIA Llave_c |
     Void Main Parent_a Parent_c Llave_a SENTENCIA Llave_c
 ;
-
 
 SENTENCIA ::=     
     SENTENCIA DECLARACION |
@@ -63,13 +67,13 @@ SENTENCIA ::=
     PRINTF
 ;
 
-
 DECLARACION ::=   
+
+    Cout Desplazamiento_Izq Comillas Identificador Comillas P_coma|
+    Cout Desplazamiento_Izq Identificador P_coma| 
     Cin Desplazamiento_Der Identificador P_coma| 
     Identificador Igual Numero P_coma |
-
-    Char Identificador P_coma |
-    
+    Char Identificador P_coma |    
     Int Identificador P_coma |
     Int Identificador Igual Numero P_coma |
     Int Identificador Op_atribucion Numero P_coma |
@@ -77,8 +81,6 @@ DECLARACION ::=
     Float Identificador Igual Numero Punto Numero P_coma |
     Int Identificador Op_incremento P_coma | 
     Int Op_incremento Identificador P_coma | 
-
-
     Cadena Identificador Op_atribucion Comillas Comillas P_coma |
     Cadena Identificador Igual Comillas Comillas P_coma |
     Cadena Identificador Op_atribucion Comillas Identificador Comillas P_coma |
@@ -89,20 +91,23 @@ DECLARACION ::=
 IF ::=
     If Parent_a SENTENCIA_BOOLEANA Parent_c Llave_a SENTENCIA Llave_c
 ;
-SENTENCIA_BOOLEANA ::= 
+
+OP_BOOLEANO ::=
     True |
-    False |
+    False 
+;
+
+
+SENTENCIA_BOOLEANA ::= 
+    OP_BOOLEANO |
     
-    Identificador Igual_a True |
+    Identificador Igual_a OP_BOOLEANO |
     Identificador Mayorque Numero |
     Identificador Mayorque Identificador |
 
-    Identificador Diferente True |
+    Identificador Diferente OP_BOOLEANO |
     Identificador Menorque Numero |
     Identificador Menorque Identificador |
-
-    Identificador Igual_a False |
-    Identificador Diferente False |
 
     Identificador Mayor_Igual Numero |
     Identificador Mayor_Igual Identificador |
@@ -166,8 +171,5 @@ PRINTF ::=
 ;
 
 SENTENCIA_PRINTF ::=
-    Identificador
-    
-
-   
+    Identificador 
 ;

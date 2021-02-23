@@ -74,9 +74,6 @@ espacio=[ \t\r]+
 /* Palabra reservada Include */
 ( #include ) {lexemas=yytext(); return Include;}
 
-
-
-
 /* Palabra reservada Define */
 ( #define ) {lexemas=yytext(); return Define;}
 
@@ -88,12 +85,6 @@ espacio=[ \t\r]+
 
 /* Palabra reservada Union */
 ( union ) {lexemas=yytext(); return Union;}
-
-
-
-
-
-
 
 /* Reservada Using namespace std */
 ( "using namespace std" ) {lexemas=yytext(); return Using;}
@@ -134,8 +125,6 @@ espacio=[ \t\r]+
 /* Operador Division */
 ( "/" ) {lexemas=yytext(); return Division;}
 
-
-
 /* Op_And */
 ( "&&" ) {lexemas=yytext(); return Op_And;}
 
@@ -156,10 +145,6 @@ espacio=[ \t\r]+
 
 /* Op_Xor bit a bit */
 ( "^" ) {lexemas=yytext(); return Op_Xor_BaB;}
-
-
-
-
 
 /*Operador MayorQue */
 ( ">" ) {lexemas = yytext(); return Mayorque;}
@@ -185,7 +170,6 @@ espacio=[ \t\r]+
 /*Operador Desplazamiento_Der */
 ( ">>" ) {lexemas = yytext(); return Desplazamiento_Der;}
 
-
 /* Operador asigna suma */
 ( "+=" ) {lexemas = yytext(); return Op_asig_suma;}
 
@@ -201,46 +185,17 @@ espacio=[ \t\r]+
 /* Operador asigna modulo */
 ( "%=" ) {lexemas = yytext(); return Op_asig_modulo;}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Operador Incremento */
 ( "++" ) {lexemas = yytext(); return Op_incremento;}
 
 /* Operador Decremento */
 ( "--" ) {lexemas = yytext(); return Op_decremento;}
 
-
-
-
-
-
-
-
 /*Reservada True*/
 ( true )      {lexemas = yytext(); return True;}
 
 /*Reservada False*/
 ( false )      {lexemas = yytext(); return False;}
-
-
-
-
-
-
-
-
 
 /* Parentesis de apertura */
 ( "(" ) {lexemas=yytext(); return Parentesis_a;}
